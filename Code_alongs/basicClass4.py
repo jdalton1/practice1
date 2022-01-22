@@ -2,6 +2,15 @@ class Person:
     def __init__(self, full_name):
         self.full_name = full_name
         self.restaurants = []
+        self.var = "val"
+
+    @property
+    def var(self):
+        return self.var
+    @var.setter
+    def var(self, value):
+        self.var = value
+
 
     def add_restaruants(self, restaurant):
         self.restaurants.append(restaurant)
@@ -30,3 +39,7 @@ class Restaurant:
     def __str__(self):
         return self.name
 
+
+def main():
+    john = Person("John Johnson")
+    john.var+=1
